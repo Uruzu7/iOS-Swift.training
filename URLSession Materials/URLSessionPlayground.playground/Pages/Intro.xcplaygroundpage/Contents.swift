@@ -41,6 +41,11 @@ var dataTask: URLSessionDataTask?
         if var urlComponents = URLComponents(string: "https://itunes.apple.com/search") {
             //5. Optionally add a query string to ensure that the search string uses escaped characters.
             urlComponents.query = "media=music&entity=song&term=\(searchTerm)"
+
+            // IF YOU WANT TO CHANGE THE METHOD FROM GET (DEFAULT) to any other.
+//            var urlR = URLRequest(url: urlComponents.url)
+//            urlR.httpMethod = "GET"// "POST", "PUT", "DELETE"
+            
             //6. Unwrapping the url components.
             guard let url = urlComponents.url else {
                 return
